@@ -1,0 +1,19 @@
+triggers:
+  - github:
+      version: 2
+      useInitiator: false
+      entryPoint: onPush
+      useEventCommitId: true
+      conditions:
+        type: push
+        branch: "master"
+        sender: "^(?!.*(jenkinspan|SVC-Looper|SVCassortmentbuild)).*$"
+      exclusive:
+        group: masterPush-deploy
+        mode: wait
+
+flows:
+  onPush:
+    - log: "OK"
+    - log: "OK2"
+
