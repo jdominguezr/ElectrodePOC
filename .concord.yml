@@ -7,11 +7,6 @@ triggers:
       conditions:
         type: push
         branch: "main"
-        sender: "^(?!.*(jenkinspan|SVC-Looper|SVCassortmentbuild)).*$"
-      exclusive:
-        group: masterPush-deploy
-        mode: wait
-
 flows:
   onPush:
     - log: "OK"
