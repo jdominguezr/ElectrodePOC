@@ -1,3 +1,3 @@
 # ElectrodePOC
 
-Ok all is ok :D 
+Hola Bandaaaaa!!! Whatsapp!!!!
