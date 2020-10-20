@@ -1,3 +1,3 @@
 # ElectrodePOC
 
-Hola Bandaaaaa!!! Whatsapp!!!!
+Hey this is a test mai fren
