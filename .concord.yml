@@ -9,6 +9,8 @@ triggers:
         status: "opened"
         branch: ".*"
 flows:
+  default:
+    -log: "TODO BONITO"
   onPush:
     - log: "OK"
     - log: "OK2"
