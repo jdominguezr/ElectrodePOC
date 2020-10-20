@@ -6,7 +6,7 @@ triggers:
       useEventCommitId: true
       conditions:
         type: push
-        branch: "master"
+        branch: "main"
         sender: "^(?!.*(jenkinspan|SVC-Looper|SVCassortmentbuild)).*$"
       exclusive:
         group: masterPush-deploy
