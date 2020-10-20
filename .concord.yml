@@ -5,8 +5,9 @@ triggers:
       entryPoint: onPush
       useEventCommitId: true
       conditions:
-        type: push
-        branch: "main"
+        type: "pull_request"
+        status: "opened"
+        branch: ".*"
 flows:
   onPush:
     - log: "OK"
