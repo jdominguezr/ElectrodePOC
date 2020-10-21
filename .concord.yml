@@ -31,7 +31,7 @@ flows:
       - call: jenkinsjob
         in:
           taskName: "Build"
-          jobName: "Btion"
+          jobName: "Build"
       - log: "Starting Notify from Email!!!!!!"  
       - call: sendEmail
         in:
