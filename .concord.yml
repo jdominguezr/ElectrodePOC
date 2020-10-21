@@ -36,7 +36,7 @@ flows:
       - call: sendEmail
         in:
           iconEmoji: ":thumbs-up-green:"
-          bodyMesage: "sin miedo al exito papi!!"
+          bodyMesage: "Don't Fear Of Success Buddy!!"
       error:
         - throw: "oh, something went wrong."
 
