@@ -18,20 +18,7 @@ flows:
   looperflow:
     - try:
       - log: "Starting looper job!!!!!!"
-      - task: jenkins
-        in:
-          baseUrl: ${baseUrl}
-          username: ${username}
-          apiToken: ${apiToken}
-          jobName: ${jobName}
-          sync: true
-      - log: "Build #${jenkinsJob.buildNumber} - ${jenkinsJob.status}"
-      - if: ${jenkinsJob.status == "SUCCESS"}
-        then:
-          - log: "Looper job executed successfully..."
-        else:
-            - log: "Looper job execution was not successful..."
-            - exit 1    
+      - call: jenkinsjob
       - log: "Starting Notify from Email!!!!!!"  
       - call: sendEmail
         in:
@@ -39,7 +26,21 @@ flows:
           bodyMesage: "sin miedo al exito papi!!"
       error:
         - throw: "oh, something went wrong."
-
+  jenkinsjob:
+    - task: jenkins
+      in:
+        baseUrl: ${baseUrl}
+        username: ${username}
+        apiToken: ${apiToken}
+        jobName: ${jobName}
+        sync: true
+    - log: "Build #${jenkinsJob.buildNumber} - ${jenkinsJob.status}"
+    - if: ${jenkinsJob.status == "SUCCESS"}
+      then:
+        - log: "Looper job executed successfully..."
+      else:
+          - log: "Looper job execution was not successful..."
+          - exit 1
   sendEmail:
     - try:
       - log: "send email"
