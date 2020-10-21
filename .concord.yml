@@ -41,7 +41,7 @@ flows:
         - throw: "oh, something went wrong."
 
   jenkinsjob:
-    - log: This is the ${takName}
+    - log: This is the ${taskName}
     - task: jenkins
       in:
         baseUrl: ${baseUrl}
